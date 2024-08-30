@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">XO Game</string>
+    <string name="enter_player_names">Enter Player Names</string>
+    <string name="start_game">Start Game</string>
+</resources>

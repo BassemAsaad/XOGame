@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Game"
+    android:background="@color/main_bg">
+    <LinearLayout
+        android:id="@+id/container_player_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_shape"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/container_player_two"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/player_one_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:text="Player One"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/icon_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_gravity="center"
+            android:textColor="#CB1C54"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player_one_name" />
+
+        <TextView
+            android:id="@+id/player_one_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="20dp"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_player_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_shape"
+        app:layout_constraintStart_toEndOf="@+id/container_player_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/container_player_one"
+        app:layout_constraintBottom_toBottomOf="@id/container_player_one"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/player_two_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:text="Player Two"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/icon_o"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O"
+            android:textColor="#FFC107"
+            android:textSize="50sp"
+            android:layout_gravity="center"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/player_two_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="20dp"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#673AB7"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linear_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintTop_toTopOf="parent"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_one"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shape"
+                    android:onClick="onPlayerClick"
+                    android:textColor="#CB1C54"
+                    android:textSize="70sp"
+
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_two"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shape"
+                    android:onClick="onPlayerClick"
+                    android:textColor="#CB1C54"
+                    android:textSize="70sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_three"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shape"
+                    android:onClick="onPlayerClick"
+                    android:textColor="#CB1C54"
+                    android:textSize="70sp"
+
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintTop_toBottomOf="@+id/linear1"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_four"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shape"
+                    android:onClick="onPlayerClick"
+                    android:textColor="#CB1C54"
+                    android:textSize="70sp"
+
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_five"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shape"
+                    android:onClick="onPlayerClick"
+                    android:textColor="#CB1C54"
+                    android:textSize="70sp"
+
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_six"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shape"
+                    android:onClick="onPlayerClick"
+                    android:textColor="#CB1C54"
+                    android:textSize="70sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintTop_toBottomOf="@id/linear2"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_seven"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shape"
+                    android:onClick="onPlayerClick"
+                    android:textColor="#CB1C54"
+                    android:textSize="70sp"
+
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_eight"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shape"
+                    android:onClick="onPlayerClick"
+                    android:textColor="#CB1C54"
+                    android:textSize="70sp"
+
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_nine"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shape"
+                    android:onClick="onPlayerClick"
+                    android:textColor="#CB1C54"
+                    android:textSize="70sp"
+
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
